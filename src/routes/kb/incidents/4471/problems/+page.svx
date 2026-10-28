@@ -22,8 +22,9 @@ Read report by report, it holds three problems with three different fixes. Each 
 its own ticket.
 
 <Callout kind="warn">
-The fix queued for #4471 changes the parser. It does not touch the booking-v3 hint or the
-one-day move, so their reports will keep coming after it ships.
+Engineering closed #4471 on 5 October: `parser` is fixed (`fix(dates): parse dd/mm for eu
+locales`), and `hint` is won't fix, because the booking-v3 form is retired. Nothing in that
+update touches the one-day move, so it stays open.
 </Callout>
 
 ## The problems
@@ -34,21 +35,21 @@ one-day move, so their reports will keep coming after it ships.
 
 Every tenant on file writes the day first. The shared parser reads month first, so day and
 month swap: 7 April goes out as 4 July. Dates with a day above 12 do not parse as a month,
-which is why only some bookings move. This is the bug #4471 describes.
+which is why only some bookings move. This is the bug #4471 describes. Fixed: ticket closed.
 
 ### `hint` — booking-v3 tells people to type the month first
 
 alder.physio, copper.studio and pale.harbour run booking-v3. Its date field prints
 `MM/DD/YYYY` under it, so people type the month first, and the form reads the tenant's way,
-day first. Same symptom, a different bug: fixing the parser does not fix it. The fix is the
-hint, or reading the field the way the hint asks.
+day first. Same symptom, a different bug: fixing the parser does not fix it. Won't fix: the
+booking-v3 form is retired, so the ticket is closed as not planned.
 
 ### `one-day-move` — the date shifts by one day, not by a month
 
 These reports describe a date that moves by one day: Tuesday 12 May shown as Monday 11 May,
 one meeting that landed on Tuesday in Lisbon and Monday in Toronto, an invite that arrived
 before the booking was made. A month-first parser cannot turn 12 May into 11 May. This looks
-like a time-zone conversion, and it needs its own investigation. The desk had already noted
+like a time-zone conversion, and it needs its own investigation. Open. The desk had already noted
 these reports (`desk-notes.json`); the cause table files them under `parser` by tenant, and
 they stay counted there too.
 
