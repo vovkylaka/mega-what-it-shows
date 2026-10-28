@@ -42,4 +42,4 @@ prerendered, with tables and the desk ref computed at build time.
 
 - New page: [`src/routes/kb/incidents/4471/problems/+page.svx`](src/routes/kb/incidents/4471/problems/+page.svx),
   as the desk sees it: [`build/kb/incidents/4471/problems.html`](build/kb/incidents/4471/problems.html).
-- Its tickets: issues #1 (`parser`, 374 reports), #2 (`hint`, 33), #3 (`one-day-move`, 5).
+- Its tickets: issues #1 (`parser`, 379 reports), #2 (`hint`, 33), #3 (`one-day-move`, 5).

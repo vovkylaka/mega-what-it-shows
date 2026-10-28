@@ -49,7 +49,8 @@ These reports describe a date that moves by one day: Tuesday 12 May shown as Mon
 one meeting that landed on Tuesday in Lisbon and Monday in Toronto, an invite that arrived
 before the booking was made. A month-first parser cannot turn 12 May into 11 May. This looks
 like a time-zone conversion, and it needs its own investigation. The desk had already noted
-these reports (`desk-notes.json`); the cause table files them under `parser` by tenant.
+these reports (`desk-notes.json`); the cause table files them under `parser` by tenant, and
+they stay counted there too.
 
 ## How the count was made
 
@@ -57,7 +58,8 @@ these reports (`desk-notes.json`); the cause table files them under `parser` by 
 - A report's cause comes from its tenant and the way it came in (`causes.ts`), not from the
   intake tag. The intake tag is a guess from the reporter's browser and disagrees with the
   tenant often.
-- The reports the desk read as a one-day move are taken out of `parser` and counted on their own.
+- The reports the desk read as a one-day move are counted on their own as well, and stay in
+  `parser`, where the desk files them.
 
 For comparison, the table on #4471, by tenant only:
 
